@@ -1,5 +1,6 @@
-﻿streamlit
+faiss
 langchain_community
 langchain_core
 langchain_huggingface
 PyPDF2
+streamlit
