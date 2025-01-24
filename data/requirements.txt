@@ -1,0 +1,3 @@
+﻿streamlit
+langchain_community
+PyPDF2
