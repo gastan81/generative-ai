@@ -15,7 +15,7 @@ llm = HuggingFaceEndpoint(repo_id=hf_model)
 
 # embeddings
 embedding_model = 'sentence-transformers/all-MiniLM-l6-v2'
-embeddings_folder = '/content/'
+embeddings_folder = 'data/cache/'
 
 embeddings = HuggingFaceEmbeddings(
     model_name=embedding_model
@@ -31,7 +31,7 @@ retriever = vector_db.as_retriever(search_kwargs={"k": 2})
 # prompt
 template = """You are a nice chatbot having a conversation with a human.
 Answer the question based only on the following context and previous conversation.
-Keep your answers short, succinct and informative, so that the couterpart can learn from you.
+Keep your answers short, succinct, informative, and clear, so that the couterpart can learn from you.
 
 Previous conversation:
 {chat_history}
