@@ -10,8 +10,8 @@ from langchain.text_splitter import RecursiveCharacterTextSplitter
 import streamlit as st
 
 # llm
-# hf_model = 'mistralai/Mistral-7B-Instruct-v0.3'
-hf_model = 'microsoft/Phi-3.5-mini-instruct'
+hf_model = 'mistralai/Mistral-7B-Instruct-v0.3'
+# hf_model = 'microsoft/Phi-3.5-mini-instruct'
 llm = HuggingFaceEndpoint(repo_id=hf_model)
 
 # embeddings
