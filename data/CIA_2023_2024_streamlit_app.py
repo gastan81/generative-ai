@@ -63,6 +63,19 @@ rag_bot = init_bot()
 ##### streamlit #####
 
 st.title('CIA World Factbook 2023-2024')
+st.subheader("Your Gateway to Global Information")
+# Introduction Text
+st.markdown("""
+Welcome to the **CIA World Factbook Explorer**! This app allows you to explore detailed information about countries worldwide,
+including demographics, geography, economy, and more.
+### Features:
+- Search for specific data from the Factbook.
+- Interact with global statistics and insights.
+- Ask questions powered by AI.
+**Start exploring now and unlock the power of global knowledge!**
+""")
+# Add an Image or Logo
+st.image("data/THE CIA World Factbook 2023-2024.jpg", caption="The CIA World Factbook 2023-2024", use_container_width=True)
 
 # Initialise chat history
 # Chat history saves the previous messages to be displayed
