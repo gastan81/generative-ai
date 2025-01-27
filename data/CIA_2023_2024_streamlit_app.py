@@ -75,7 +75,7 @@ including demographics, geography, economy, and more.
 **Start exploring now and unlock the power of global knowledge!**
 """)
 # Add an Image or Logo
-st.image("data/CIA_2023_2024_headpage.jpg", caption="The CIA World Factbook 2023-2024", use_container_width=True)
+# st.image("data/CIA_2023_2024_headpage.jpg", caption="The CIA World Factbook 2023-2024", use_container_width=True)
 
 # Initialise chat history
 # Chat history saves the previous messages to be displayed
