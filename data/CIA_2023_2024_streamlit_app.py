@@ -5,7 +5,7 @@ from langchain_huggingface import HuggingFaceEndpoint, HuggingFaceEmbeddings
 from langchain.chains import create_history_aware_retriever
 from langchain.chains.combine_documents.stuff import create_stuff_documents_chain
 from langchain.chains.retrieval import create_retrieval_chain
-from langchain.vectorstores import FAISS
+from langchain.vectorstores import FAISS, faiss-cpu
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 import streamlit as st
 
@@ -32,7 +32,7 @@ retriever = vector_db.as_retriever(search_kwargs={"k": 2})
 # prompt
 template = """You are a nice chatbot having a conversation with a human.
 Answer the question based only on the following context and previous conversation.
-Keep your answers short, succinct, informative, and clear, so that the couterpart can learn from you.
+Keep your answers short, succinct. Give only one question-answer.
 
 Previous conversation:
 {chat_history}
@@ -42,6 +42,7 @@ Context to answer question:
 
 New human question: {input}
 Response:"""
+# , informative, and clear, so that the couterpart can learn from you.
 
 prompt = ChatPromptTemplate.from_messages([
     ('system', template),
@@ -74,7 +75,7 @@ for message in st.session_state.messages:
         st.markdown(message['content'])
 
 # React to user input
-if prompt := st.chat_input('Curious minds wanted!'):
+if prompt := st.chat_input('Want to know CIA secrets?'):
 
     # Display user message in chat message container
     st.chat_message('human').markdown(prompt)
